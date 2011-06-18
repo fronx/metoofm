@@ -8,8 +8,8 @@ get('/') do
   File.read(PUBLIC_DIR + '/index.html')
 end
 
-get('/scrobbles') do
-  client.publish('/scrobbles/*',
+get('/post') do
+  client.publish('/scrobbles',
     :user => 'sinatra',
     :song => 'current track'
   )
